@@ -30,7 +30,7 @@ RUN \
     && git clone --depth 1 https://github.com/tesseract-ocr/tesseract.git . \
     && ./autogen.sh \
     && ./configure \
-    && make -j4 \
+    && make -j$(nproc) \
     && make install \
 # Install Python dependencies
     && pip install -U --no-cache-dir pytesseract \

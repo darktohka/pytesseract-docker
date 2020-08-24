@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Install builder plugin`
+      - name: Install builder plugin
         id: buildx
         uses: crazy-max/ghaction-docker-buildx@v3
         with:
