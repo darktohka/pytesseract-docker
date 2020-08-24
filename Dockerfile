@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:rc-alpine
 
 ENV SHELL=/bin/sh
 
@@ -15,7 +15,7 @@ WORKDIR /tmp
 
 RUN \
 # Update system
-    && apk update \
+    apk update \
 # Install libraries
     && apk add --no-cache openssl leptonica openjpeg tiff libpng zlib freetype libgcc libstdc++ \
 # Install development tools
