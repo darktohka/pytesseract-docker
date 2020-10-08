@@ -1,4 +1,4 @@
-FROM python:rc-alpine
+FROM python:alpine
 
 ENV SHELL /bin/sh
 
