@@ -26,7 +26,7 @@ RUN \
     && mkdir /usr/local/share/tessdata \
     && mkdir tesseract \
     && cd tesseract \
-    && wget https://github.com/tesseract-ocr/tessdata_fast/raw/master/eng.traineddata -P "$TESSDATA_PREFIX" \
+    && wget https://github.com/tesseract-ocr/tessdata_fast/raw/main/eng.traineddata -P "$TESSDATA_PREFIX" \
     && git clone --depth 1 https://github.com/tesseract-ocr/tesseract.git . \
     && ./autogen.sh \
     && ./configure \
