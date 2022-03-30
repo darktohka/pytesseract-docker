@@ -1,21 +1,18 @@
 FROM python:alpine
 
-ENV SHELL /bin/sh
-
-ENV CC /usr/bin/clang
-ENV CXX /usr/bin/clang++
-ENV LANG C.UTF-8
-
-ENV PYTHONUNBUFFERED 1
-ENV PIP_DISABLE_PIP_VERSION_CHECK 1
-ENV PIP_NO_CACHE_DIR 0
-ENV TESSDATA_PREFIX /usr/local/share/tessdata
-
-WORKDIR /tmp
+ENV SHELL=/bin/sh \
+    CC=/usr/bin/clang \
+    CXX=/usr/bin/clang++ \
+    LANG=C.UTF-8 \
+    PYTHONUNBUFFERED=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    PIP_NO_CACHE_DIR=0 \
+    TESSDATA_PREFIX=/usr/local/share/tessdata
 
 RUN \
+    cd /tmp \
 # Update system
-    apk update \
+    && apk update \
 # Install libraries
     && apk add --no-cache openssl leptonica openjpeg tiff libpng zlib freetype libgcc libstdc++ \
 # Install development tools
